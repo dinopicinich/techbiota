@@ -10,6 +10,9 @@ const brand = {
   secondary: "#1d695f",
 };
 
+// 👇 New: env-based toggle (show when "1", hide otherwise)
+const SHOW_MEET = process.env.NEXT_PUBLIC_SHOW_MEET === "1";
+
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
 
@@ -18,7 +21,14 @@ export default function SiteHeader() {
       <a onClick={onClick} href="/services"  className="hover:underline" style={{ color: brand.primary }}>Services</a>
       <a onClick={onClick} href="/healthcare" className="hover:underline" style={{ color: brand.primary }}>Healthcare</a>
       <a onClick={onClick} href="/resources" className="hover:underline" style={{ color: brand.primary }}>Resources</a>
-      <a onClick={onClick} href="/meet-techbiota" className="hover:underline" style={{ color: brand.primary }}>Meet TechBiota</a>
+
+      {/* 👇 New: conditionally render Meet TechBiota */}
+      {SHOW_MEET && (
+        <a onClick={onClick} href="/meet-techbiota" className="hover:underline" style={{ color: brand.primary }}>
+          Meet TechBiota
+        </a>
+      )}
+
       <a onClick={onClick} href="/about"     className="hover:underline" style={{ color: brand.primary }}>About</a>
       <a onClick={onClick} href="/contact"   className="hover:underline" style={{ color: brand.primary }}>Contact</a>
     </>
