@@ -20,9 +20,10 @@ export default function SiteHeader() {
     <>
       <a onClick={onClick} href="/services"  className="hover:underline" style={{ color: brand.primary }}>Services</a>
       <a onClick={onClick} href="/healthcare" className="hover:underline" style={{ color: brand.primary }}>Healthcare</a>
-      <a onClick={onClick} href="/pricing" className="hover:underline" style={{ color: brand.primary }}>Pricing</a>
+      <a onClick={onClick} href="/fintech" className="hover:underline" style={{ color: brand.primary }}>FinTech</a>
       <a onClick={onClick} href="/industries" className="hover:underline" style={{ color: brand.primary }}>Industries</a>
       <a onClick={onClick} href="/resources" className="hover:underline" style={{ color: brand.primary }}>Resources</a>
+      <a onClick={onClick} href="/pricing" className="hover:underline" style={{ color: brand.primary }}>Pricing</a>
 
       {/* 👇 New: conditionally render Meet TechBiota */}
       {SHOW_MEET && (
@@ -30,7 +31,6 @@ export default function SiteHeader() {
           Meet TechBiota
         </a>
       )}
-
       <a onClick={onClick} href="/about"     className="hover:underline" style={{ color: brand.primary }}>About</a>
       <a onClick={onClick} href="/contact"   className="hover:underline" style={{ color: brand.primary }}>Contact</a>
     </>
