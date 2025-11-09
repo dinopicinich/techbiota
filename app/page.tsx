@@ -11,6 +11,8 @@ import {
   Lock,
   Server,
   ArrowRight,
+  CreditCard,
+  Building,
 } from "lucide-react";
 
 /**
@@ -391,58 +393,68 @@ function AssessmentCard({ brand, calendlyUrl }: { brand: any; calendlyUrl: strin
       className="min-h-screen"
       style={{ background: `linear-gradient(180deg, ${brand.light} 0%, #ffffff 100%)` }}
     >
-      {/* Hero */}
-      <section className="relative">
-        <div className="mx-auto max-w-7xl px-6 pt-10 pb-14 grid md:grid-cols-2 gap-10 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1
-              className="text-4xl md:text-5xl font-bold leading-tight"
-              style={{ color: brand.primary }}
-            >
-              Healthcare IT that <span style={{ color: brand.accent }}>protects</span> life and
-              data
-            </h1>
-            <p className="mt-5 text-slate-700 text-lg leading-7">
-              We manage, secure, and optimize IT for hospitals, practices, biotech, and research
-              organizations—so you can focus on patients, not systems.
-            </p>
-            <div className="mt-7 flex flex-wrap items-center gap-3">
-              <a
-                href="#contact"
-                className="px-5 py-3 rounded-xl font-semibold"
-                style={{ background: brand.accent, color: "white" }}
-              >
-                Get Started
-              </a>
-              <a
-                href="#assessment"
-                className="px-5 py-3 rounded-xl font-semibold"
-                style={{ border: `2px solid ${brand.secondary}`, color: brand.secondary }}
-              >
-                Free HIPAA Readiness Check
-              </a>
-            </div>
-            <div className="mt-6 text-xs uppercase tracking-wide" style={{ color: brand.secondary }}>
-              HIPAA • HITECH • SOC 2-aligned processes
-            </div>
-          </motion.div>
+      {/* === HERO: Dual-vertical messaging for Healthcare + FinTech === */}
+<section className="relative">
+  <div className="mx-auto max-w-7xl px-6 pt-10 pb-14 grid md:grid-cols-2 gap-10 items-center">
+    {/* Left: Messaging */}
+    <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+      <div className="inline-flex items-center gap-2 mb-3">
+        <span className="text-[11px] font-semibold px-2 py-1 rounded-full" style={{ background: brand.light, color: brand.secondary }}>
+          Regulated industries
+        </span>
+        <span className="text-[11px] uppercase tracking-wide text-slate-600">Healthcare • FinTech</span>
+      </div>
 
-          <motion.div
-  initial={{ opacity: 0, y: 12 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, delay: 0.05 }}
->
-  <AssessmentCard
-    brand={brand}
-    calendlyUrl={process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/your-org/intro-call"}
-  />
-</motion.div>
-        </div>
-      </section>
+      <h1 className="text-4xl md:text-5xl font-bold leading-tight" style={{ color: brand.primary }}>
+        Secure, compliant IT for <span style={{ color: brand.accent }}>Healthcare</span> & <span style={{ color: brand.secondary }}>FinTech</span>
+      </h1>
+
+      <p className="mt-5 text-slate-700 text-lg leading-7">
+        We manage, secure, and optimize IT for hospitals, biotech, financial services, and trading platforms—bringing
+        HIPAA, SOC&nbsp;2, and PCI-DSS rigor to every environment.
+      </p>
+
+      <div className="mt-7 flex flex-wrap items-center gap-3">
+        <a
+          href="#contact"
+          className="px-5 py-3 rounded-xl font-semibold"
+          style={{ background: brand.accent, color: "white" }}
+        >
+          Get Started
+        </a>
+        <a
+          href="/healthcare"
+          className="px-5 py-3 rounded-xl font-semibold"
+          style={{ border: `2px solid ${brand.secondary}`, color: brand.secondary }}
+        >
+          See Healthcare
+        </a>
+        <a
+          href="/fintech"
+          className="px-5 py-3 rounded-xl font-semibold"
+          style={{ border: `2px solid ${brand.primary}`, color: brand.primary }}
+        >
+          See FinTech
+        </a>
+      </div>
+
+      <div className="mt-6 flex flex-wrap gap-2 text-xs uppercase tracking-wide">
+        <span className="px-2 py-1 rounded-full" style={{ background: brand.light, color: brand.primary }}>HIPAA / HITECH</span>
+        <span className="px-2 py-1 rounded-full" style={{ background: brand.light, color: brand.primary }}>SOC 2</span>
+        <span className="px-2 py-1 rounded-full" style={{ background: brand.light, color: brand.primary }}>PCI-DSS</span>
+        <span className="px-2 py-1 rounded-full" style={{ background: brand.light, color: brand.primary }}>Zero Trust</span>
+      </div>
+    </motion.div>
+
+    {/* Right: your existing assessment card */}
+    <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.05 }}>
+      <AssessmentCard
+        brand={brand}
+        calendlyUrl={process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/your-org/intro-call"}
+      />
+    </motion.div>
+  </div>
+</section>
 
       {/* Trust band */}
       <section className="py-8">
@@ -464,6 +476,62 @@ function AssessmentCard({ brand, calendlyUrl }: { brand: any; calendlyUrl: strin
           </div>
         </div>
       </section>
+{/* === Industries We Empower (Healthcare + FinTech) === */}
+<section id="industries" className="py-12">
+  <div className="mx-auto max-w-7xl px-6">
+    <h2 className="text-3xl font-bold mb-6" style={{ color: brand.primary }}>
+      Industries We Empower
+    </h2>
+
+    <div className="grid md:grid-cols-2 gap-6">
+      {/* Healthcare card */}
+      <a href="/healthcare" className="group rounded-2xl p-6 shadow-sm border bg-white hover:-translate-y-[2px] hover:shadow-md transition"
+         style={{ borderColor: "#e6ebf2" }}>
+        <div className="flex items-center gap-3 mb-3">
+          <div className="p-2 rounded-xl" style={{ background: brand.light }}>
+            <Stethoscope size={22} style={{ color: brand.secondary }} />
+          </div>
+          <h3 className="text-xl font-semibold" style={{ color: brand.primary }}>Healthcare</h3>
+        </div>
+        <p className="text-slate-700">
+          HIPAA-ready, cyber-resilient operations for hospitals, practices, biotech, and research orgs—without disrupting care.
+        </p>
+        <ul className="mt-4 text-sm text-slate-700 space-y-2 list-disc list-inside">
+          <li>EHR resilience (Epic / Cerner)</li>
+          <li>24/7 clinical helpdesk</li>
+          <li>IoMT segmentation</li>
+        </ul>
+        <span className="inline-flex items-center gap-2 mt-4 text-sm font-medium group-hover:underline" style={{ color: brand.secondary }}>
+          Explore Healthcare
+          <ArrowRight size={16} />
+        </span>
+      </a>
+
+      {/* FinTech card */}
+      <a href="/fintech" className="group rounded-2xl p-6 shadow-sm border bg-white hover:-translate-y-[2px] hover:shadow-md transition"
+         style={{ borderColor: "#e6ebf2" }}>
+        <div className="flex items-center gap-3 mb-3">
+          <div className="p-2 rounded-xl" style={{ background: brand.light }}>
+            <CreditCard size={22} style={{ color: brand.secondary }} />
+          </div>
+          <h3 className="text-xl font-semibold" style={{ color: brand.primary }}>FinTech</h3>
+        </div>
+        <p className="text-slate-700">
+          Managed IT and cybersecurity for financial platforms and firms—SOC&nbsp;2, PCI-DSS, identity hardening, and cloud governance.
+        </p>
+        <ul className="mt-4 text-sm text-slate-700 space-y-2 list-disc list-inside">
+          <li>SOC 2 / PCI-DSS guidance</li>
+          <li>Zero Trust & IAM controls</li>
+          <li>24/7 monitoring & incident response</li>
+        </ul>
+        <span className="inline-flex items-center gap-2 mt-4 text-sm font-medium group-hover:underline" style={{ color: brand.secondary }}>
+          Explore FinTech
+          <ArrowRight size={16} />
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
 
       {/* Services buckets */}
       <section id="services" className="py-12">
