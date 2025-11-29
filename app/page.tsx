@@ -393,25 +393,39 @@ function AssessmentCard({ brand, calendlyUrl }: { brand: any; calendlyUrl: strin
       className="min-h-screen"
       style={{ background: `linear-gradient(180deg, ${brand.light} 0%, #ffffff 100%)` }}
     >
-      {/* === HERO: Dual-vertical messaging for Healthcare + FinTech === */}
+      {/* === HERO: Healthcare-only messaging === */}
 <section className="relative">
   <div className="mx-auto max-w-7xl px-6 pt-10 pb-14 grid md:grid-cols-2 gap-10 items-center">
     {/* Left: Messaging */}
-    <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <div className="inline-flex items-center gap-2 mb-3">
-        <span className="text-[11px] font-semibold px-2 py-1 rounded-full" style={{ background: brand.light, color: brand.secondary }}>
-          Regulated industries
+        <span
+          className="text-[11px] font-semibold px-2 py-1 rounded-full"
+          style={{ background: brand.light, color: brand.secondary }}
+        >
+          Healthcare IT
         </span>
-        <span className="text-[11px] uppercase tracking-wide text-slate-600">Healthcare • FinTech</span>
+        <span className="text-[11px] uppercase tracking-wide text-slate-600">
+          Hospitals • Practices • Biotech
+        </span>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-bold leading-tight" style={{ color: brand.primary }}>
-        Secure, compliant IT for <span style={{ color: brand.accent }}>Healthcare</span> & <span style={{ color: brand.secondary }}>FinTech</span>
+      <h1
+        className="text-4xl md:text-5xl font-bold leading-tight"
+        style={{ color: brand.primary }}
+      >
+        Secure, compliant IT for{" "}
+        <span style={{ color: brand.accent }}>healthcare organizations</span>
       </h1>
 
       <p className="mt-5 text-slate-700 text-lg leading-7">
-        We manage, secure, and optimize IT for hospitals, biotech, financial services, and trading platforms—bringing
-        HIPAA, SOC&nbsp;2, and PCI-DSS rigor to every environment.
+        We manage, secure, and optimize IT for hospitals, large practices,
+        ambulatory sites, and biotech—bringing HIPAA, HITECH, and SOC&nbsp;2
+        rigor to every environment so clinicians can focus on patient care.
       </p>
 
       <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -427,35 +441,54 @@ function AssessmentCard({ brand, calendlyUrl }: { brand: any; calendlyUrl: strin
           className="px-5 py-3 rounded-xl font-semibold"
           style={{ border: `2px solid ${brand.secondary}`, color: brand.secondary }}
         >
-          See Healthcare
-        </a>
-        <a
-          href="/fintech"
-          className="px-5 py-3 rounded-xl font-semibold"
-          style={{ border: `2px solid ${brand.primary}`, color: brand.primary }}
-        >
-          See FinTech
+          See Healthcare Services
         </a>
       </div>
 
       <div className="mt-6 flex flex-wrap gap-2 text-xs uppercase tracking-wide">
-        <span className="px-2 py-1 rounded-full" style={{ background: brand.light, color: brand.primary }}>HIPAA / HITECH</span>
-        <span className="px-2 py-1 rounded-full" style={{ background: brand.light, color: brand.primary }}>SOC 2</span>
-        <span className="px-2 py-1 rounded-full" style={{ background: brand.light, color: brand.primary }}>PCI-DSS</span>
-        <span className="px-2 py-1 rounded-full" style={{ background: brand.light, color: brand.primary }}>Zero Trust</span>
+        <span
+          className="px-2 py-1 rounded-full"
+          style={{ background: brand.light, color: brand.primary }}
+        >
+          HIPAA / HITECH
+        </span>
+        <span
+          className="px-2 py-1 rounded-full"
+          style={{ background: brand.light, color: brand.primary }}
+        >
+          EHR Resilience
+        </span>
+        <span
+          className="px-2 py-1 rounded-full"
+          style={{ background: brand.light, color: brand.primary }}
+        >
+          24/7 Clinical Helpdesk
+        </span>
+        <span
+          className="px-2 py-1 rounded-full"
+          style={{ background: brand.light, color: brand.primary }}
+        >
+          Zero Trust
+        </span>
       </div>
     </motion.div>
 
-    {/* Right: your existing assessment card */}
-    <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.05 }}>
+    {/* Right: Assessment card stays the same */}
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.05 }}
+    >
       <AssessmentCard
         brand={brand}
-        calendlyUrl={process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/your-org/intro-call"}
+        calendlyUrl={
+          process.env.NEXT_PUBLIC_CALENDLY_URL ||
+          "https://calendly.com/your-org/intro-call"
+        }
       />
     </motion.div>
   </div>
 </section>
-
       {/* Trust band */}
       <section className="py-8">
         <div className="mx-auto max-w-7xl px-6">
