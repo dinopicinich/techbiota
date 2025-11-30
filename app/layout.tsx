@@ -19,6 +19,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "TechBiota | Healthcare IT MSP",
   description: "Managed IT & cybersecurity for healthcare and life sciences.",
+  icons: {
+    icon: "/techbiota_favicon.ico",
+    shortcut: "/techbiota_favicon.ico",
+    apple: "/techbiota_favicon.ico"
+  }
 };
 
 export default function RootLayout({
