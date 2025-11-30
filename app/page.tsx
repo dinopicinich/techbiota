@@ -11,7 +11,6 @@ import {
   Lock,
   Server,
   ArrowRight,
-  CreditCard,
   Building,
 } from "lucide-react";
 
@@ -509,7 +508,7 @@ function AssessmentCard({ brand, calendlyUrl }: { brand: any; calendlyUrl: strin
           </div>
         </div>
       </section>
-{/* === Industries We Empower (Healthcare + FinTech) === */}
+{/* === Industries We Empower (Healthcare subsectors) === */}
 <section id="industries" className="py-12">
   <div className="mx-auto max-w-7xl px-6">
     <h2 className="text-3xl font-bold mb-6" style={{ color: brand.primary }}>
@@ -518,47 +517,65 @@ function AssessmentCard({ brand, calendlyUrl }: { brand: any; calendlyUrl: strin
 
     <div className="grid md:grid-cols-2 gap-6">
       {/* Healthcare card */}
-      <a href="/healthcare" className="group rounded-2xl p-6 shadow-sm border bg-white hover:-translate-y-[2px] hover:shadow-md transition"
-         style={{ borderColor: "#e6ebf2" }}>
+      <a
+        href="/healthcare"
+        className="group rounded-2xl p-6 shadow-sm border bg-white hover:-translate-y-[2px] hover:shadow-md transition"
+        style={{ borderColor: "#e6ebf2" }}
+      >
         <div className="flex items-center gap-3 mb-3">
           <div className="p-2 rounded-xl" style={{ background: brand.light }}>
             <Stethoscope size={22} style={{ color: brand.secondary }} />
           </div>
-          <h3 className="text-xl font-semibold" style={{ color: brand.primary }}>Healthcare</h3>
+          <h3 className="text-xl font-semibold" style={{ color: brand.primary }}>
+            Healthcare Delivery
+          </h3>
         </div>
         <p className="text-slate-700">
-          HIPAA-ready, cyber-resilient operations for hospitals, practices, biotech, and research orgs—without disrupting care.
+          HIPAA-ready, cyber-resilient operations for hospitals, practices, ambulatory sites,
+          and care networks—without disrupting patient care.
         </p>
         <ul className="mt-4 text-sm text-slate-700 space-y-2 list-disc list-inside">
           <li>EHR resilience (Epic / Cerner)</li>
           <li>24/7 clinical helpdesk</li>
-          <li>IoMT segmentation</li>
+          <li>IoMT segmentation & endpoint hygiene</li>
         </ul>
-        <span className="inline-flex items-center gap-2 mt-4 text-sm font-medium group-hover:underline" style={{ color: brand.secondary }}>
+        <span
+          className="inline-flex items-center gap-2 mt-4 text-sm font-medium group-hover:underline"
+          style={{ color: brand.secondary }}
+        >
           Explore Healthcare
           <ArrowRight size={16} />
         </span>
       </a>
 
-      {/* FinTech card */}
-      <a href="/fintech" className="group rounded-2xl p-6 shadow-sm border bg-white hover:-translate-y-[2px] hover:shadow-md transition"
-         style={{ borderColor: "#e6ebf2" }}>
+      {/* Biotech & Research card (repurposed from FinTech) */}
+      <a
+        href="/healthcare"
+        className="group rounded-2xl p-6 shadow-sm border bg-white hover:-translate-y-[2px] hover:shadow-md transition"
+        style={{ borderColor: "#e6ebf2" }}
+      >
         <div className="flex items-center gap-3 mb-3">
           <div className="p-2 rounded-xl" style={{ background: brand.light }}>
-            <CreditCard size={22} style={{ color: brand.secondary }} />
+            <Activity size={22} style={{ color: brand.secondary }} />
           </div>
-          <h3 className="text-xl font-semibold" style={{ color: brand.primary }}>FinTech</h3>
+          <h3 className="text-xl font-semibold" style={{ color: brand.primary }}>
+            Biotech &amp; Research
+          </h3>
         </div>
         <p className="text-slate-700">
-          Managed IT and cybersecurity for financial platforms and firms—SOC&nbsp;2, PCI-DSS, identity hardening, and cloud governance.
+          Secure, scalable IT for biotech, clinical research, and life-science organizations—
+          supporting lab systems, scientific workloads, and HIPAA-aligned data protection.
         </p>
         <ul className="mt-4 text-sm text-slate-700 space-y-2 list-disc list-inside">
-          <li>SOC 2 / PCI-DSS guidance</li>
-          <li>Zero Trust & IAM controls</li>
-          <li>24/7 monitoring & incident response</li>
+          <li>Lab &amp; research application hosting</li>
+          <li>Data protection for PHI &amp; research data</li>
+          <li>Secure collaboration with hospital partners</li>
         </ul>
-        <span className="inline-flex items-center gap-2 mt-4 text-sm font-medium group-hover:underline" style={{ color: brand.secondary }}>
-          Explore FinTech
+        <span
+          className="inline-flex items-center gap-2 mt-4 text-sm font-medium group-hover:underline"
+          style={{ color: brand.secondary }}
+        >
+          Explore Biotech &amp; Research
           <ArrowRight size={16} />
         </span>
       </a>
